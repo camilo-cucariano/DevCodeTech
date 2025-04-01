@@ -1,11 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("nav ul li a");
+document.addEventListener("DOMContentLoaded", function () {
+    const blogContainer = document.getElementById("blog-container");
     
-    links.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            target.scrollIntoView({ behavior: "smooth" });
-        });
+    const blogPosts = [
+        { title: "Primer Post", content: "Este es el primer artículo del blog." },
+        { title: "Segundo Post", content: "Aquí va otro artículo interesante." }
+    ];
+    
+    blogContainer.innerHTML = "";
+    blogPosts.forEach(post => {
+        let article = document.createElement("div");
+        article.classList.add("blog-post");
+        article.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+        blogContainer.appendChild(article);
     });
 });
