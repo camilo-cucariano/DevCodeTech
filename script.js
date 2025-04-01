@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const blogContainer = document.getElementById("blog-container");
-    
-    const blogPosts = [
-        { title: "Primer Post", content: "Este es el primer artículo del blog." },
-        { title: "Segundo Post", content: "Aquí va otro artículo interesante." }
-    ];
-    
-    blogContainer.innerHTML = "";
-    blogPosts.forEach(post => {
-        let article = document.createElement("div");
-        article.classList.add("blog-post");
-        article.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-        blogContainer.appendChild(article);
-    });
+    const profileInfo = {
+        name: "JOSE CAMILO CUCARIANO CASTRO",
+        location: "Bogotá, Colombia",
+        email: "ingenierocamilocucariano@gmail.com",
+        phone: "316 199 6712",
+        linkedin: "https://www.linkedin.com/in/camilo-cucariano-764b82250/",
+        github: "https://github.com/camilo-cucariano"
+    };
+
+    document.getElementById("name").textContent = profileInfo.name;
+    document.getElementById("location").textContent = profileInfo.location;
+    document.getElementById("email").textContent = profileInfo.email;
+    document.getElementById("phone").textContent = profileInfo.phone;
+    document.getElementById("linkedin").href = profileInfo.linkedin;
+    document.getElementById("github").href = profileInfo.github;
 });
